@@ -1,0 +1,10 @@
+site_name: My Project Docs
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Design: design.md
+  - Logging: logging.md
+  - Known Issues: known_issues.md
