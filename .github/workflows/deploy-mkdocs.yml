@@ -16,7 +16,9 @@ jobs:
         with:
           python-version: "3.11"
 
-      - run: pip install -r requirements.txt
+#      - run: pip install -r requirements.txt
+      - run: pip install mkdocs mkdocs-material
+
       # requirements.txt에 mkdocs, (material 쓰면 mkdocs-material) 포함
 
       - run: mkdocs gh-deploy --force
