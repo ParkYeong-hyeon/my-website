@@ -6,5 +6,31 @@ nav:
   - Home: index.md
   - Quickstart: quickstart.md
   - Design: design.md
+  - Design0:
+      - Overview: design/index.md
+      - Philosophy: design/philosophy.md
+      - Core:
+          - Overview: design/core/index.md
+          - Circuit Construction Flow: design/core/circuit-flow.md
+          - GateFactory: design/core/gate-factory.md
+          - PatternApplier: design/core/pattern-applier.md
+          - SingleCircuitBuilder: design/core/circuit-builder.md
+          - MidIR: design/core/midir.md
+          - Parameters & Sharing: design/core/params.md
+      - Models:
+          - Overview: design/models/index.md
+          - CNN-like QCNN: design/models/cnn-like-qcnn.md
+          - Research-oriented QCNN: design/models/research-qcnn.md
+
+
+
+
+  - Background: background.md
+  - Roadmap: roadmap.md
   - Logging: logging.md
   - Known Issues: known_issues.md
+
+theme:
+    name: material
+extra_css:
+  - stylesheets/extra.css
