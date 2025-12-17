@@ -1,0 +1,17 @@
+.core-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  padding:.5rem 0 1rem 0;
+}
+.core-nav a{
+  display:inline-block;
+  padding:.35rem .6rem;
+  border:1px solid var(--md-default-fg-color--lightest);
+  border-radius:999px;
+  text-decoration:none;
+  font-size:.85rem;
+}
+.core-nav a:hover{
+  border-color: var(--md-accent-fg-color);
+}
