@@ -1,13 +1,20 @@
 name: deploy-mkdocs
+
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,9 +23,18 @@ jobs:
         with:
           python-version: "3.11"
 
-#      - run: pip install -r requirements.txt
       - run: pip install mkdocs mkdocs-material
 
-      # requirements.txt에 mkdocs, (material 쓰면 mkdocs-material) 포함
+      - run: mkdocs build --strict
 
-      - run: mkdocs gh-deploy --force
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
